@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #FFE4E1, #E6E6FA, #F0F8FF);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+#gameContainer {
+    width: 800px;
+    height: 500px;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#startScreen {
+    background: linear-gradient(45deg, #FFB6C1, #E6E6FA);
+    text-align: center;
+    padding: 40px;
+}
+
+#startScreen h1 {
+    font-size: 2.5em;
+    color: #FF69B4;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+#startScreen p {
+    font-size: 1.2em;
+    color: #8B4513;
+    margin-bottom: 30px;
+}
+
+button {
+    background: linear-gradient(45deg, #FF69B4, #FFB6C1);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+    font-family: inherit;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(255, 105, 180, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.controls {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #FFB6C1;
+}
+
+.controls p {
+    margin: 5px 0;
+    color: #8B4513;
+}
+
+#gameScreen {
+    background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+}
+
+#gameUI {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+#score {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #FF69B4;
+    border: 2px solid #FFB6C1;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+#muteButton {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #FFB6C1;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+#gameCanvas {
+    border-radius: 0 0 20px 20px;
+    display: block;
+    margin-top: 80px;
+}
+
+#gameOverScreen {
+    background: linear-gradient(45deg, #DDA0DD, #F0E68C);
+    text-align: center;
+    padding: 40px;
+}
+
+#gameOverScreen h2 {
+    font-size: 2.2em;
+    color: #8B008B;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+#finalScore {
+    font-size: 1.5em;
+    color: #FF69B4;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+#encouragement {
+    font-size: 1.1em;
+    color: #8B4513;
+    margin-bottom: 30px;
+}
+
+/* Responsividade */
+@media (max-width: 850px) {
+    #gameContainer {
+        width: 95vw;
+        height: 70vh;
+    }
+    
+    #gameCanvas {
+        width: 100%;
+        height: calc(100% - 80px);
+    }
+    
+    #startScreen h1 {
+        font-size: 2em;
+    }
+    
+    button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinnamoroll - Corrida de Obstáculos Fofa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="startScreen" class="screen">
+            <h1>🌟 Cinnamoroll Adventure 🌟</h1>
+            <p>Ajude o Cinnamoroll a voar pelos obstáculos!</p>
+            <button id="startButton">Começar Jogo</button>
+            <div class="controls">
+                <p>🎮 Controles:</p>
+                <p>Espaço ou Clique = Voar para cima</p>
+                <p>Evite os obstáculos rosa</p>
+            </div>
+        </div>
+        
+        <div id="gameScreen" class="screen hidden">
+            <div id="gameUI">
+                <div id="score">Pontuação: 0</div>
+                <button id="muteButton">🔊</button>
+            </div>
+            <canvas id="gameCanvas" width="800" height="400"></canvas>
+        </div>
+        
+        <div id="gameOverScreen" class="screen hidden">
+            <h2>💫 Fim de Jogo! 💫</h2>
+            <p id="finalScore">Sua pontuação: 0</p>
+            <p id="encouragement">O Cinnamoroll está orgulhoso de você! ✨</p>
+            <button id="restartButton">Jogar Novamente</button>
+        </div>
+    </div>
+    
+    <audio id="backgroundMusic" loop>
+        <source src="background_music.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
