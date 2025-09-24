@@ -491,13 +491,13 @@ function gameOver() {
     finalScoreElement.textContent = `Sua pontuação: ${score}`;
     
     // Mensagem de encorajamento baseada na pontuação
-    let encouragement = "O Cinnamoroll está orgulhoso de você! ✨";
+    let encouragement = "O Cinnamoroll está orgulhoso de você!Tchelly ✨";
     if (score >= 20) {
         encouragement = "Incrível! Você é um piloto excepcional! 🌟";
     } else if (score >= 10) {
         encouragement = "Muito bem! O Cinnamoroll adorou voar com você! 💫";
     } else if (score >= 5) {
-        encouragement = "Bom trabalho! Continue praticando! 🎈";
+        encouragement = "Mais um pouquinho de esforço!!!..TCHELLY! 🎈";
     }
     
     document.getElementById('encouragement').textContent = encouragement;
