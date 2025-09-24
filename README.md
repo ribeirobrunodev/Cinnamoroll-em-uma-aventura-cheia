@@ -1,4 +1,4 @@
-# 🌟 Cinnamoroll - Jogo de Corrida de Obstáculos Fofa 🌟
+# 🌟 Cinnamoroll - Jogo de Obstáculos  🌟
 
 
 ## 🎮 Como Jogar
